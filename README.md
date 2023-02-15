@@ -1,1 +1,1 @@
-# COVID-19-Death-Prediction
+# Machine Learning Projects
