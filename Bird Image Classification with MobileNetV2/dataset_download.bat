@@ -1,0 +1,1 @@
+powershell -Command "Invoke-WebRequest https://download1525.mediafire.com/rm2uvry549bgX0iCE8TxsVD8djr8S32rf6JMvZlrpW47Pr4qvvaIbiaMXMpcL6n07xKlIpWw-u7rPqY07jngKGXJFMsclZE/7kdc22maou64ffw/datasets.zip -OutFile datasets.zip"
