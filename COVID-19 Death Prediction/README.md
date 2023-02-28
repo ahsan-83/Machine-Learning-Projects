@@ -60,3 +60,45 @@ A Deep Learning Model is developed in this project to predict death risk of COVI
 ![](https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/resources/correlation_mat.png)
 
 - COPD, ASTHMA, INMSUPR, OTHER_DISEASE, CARDIOVASCULAR, OBESITY, RENAL_CHRONIC, TOBACCO features has lower correlations.
+
+## Logistic Regression Model
+
+- Deep Learning Logistic Regression Model used for COVID-19 Death Prediction 
+- Model contains 3 Dense layers with [128, 64, 32] units and RELU activation and 1 Dense layer unit with Sigmoid activation
+- Batch Size : 512
+- Learning Rate : 0.01
+- Optimization Algo : Adam
+- Loss : Binary Crossentropy
+
+**Model Evaluation Metrics**
+
+Model | Accuracy | Precision | Recall | F1 Score
+--- | --- | --- | --- |--- 
+LR Model | 0.938971 | 0.638825 | 0.369167 | 0.467926 
+
+**Model Confusion Matrix**
+
+![](https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/resources/LR_model_confusion_mat.png)
+
+**Model Analysis**
+
+- Logistic Regression Model achieved 93% test accuracy
+- F1 Score is 47 which means we predicted the patients who survived well but we can't say the same thing for dead patients.
+
+**Model Undersampling**
+
+- Dataset is unbalanced in terms of dead and alive patients.
+- Dataset is undersampled by keeping all dead patient records while shrinking alive patient records.
+
+![](https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/resources/death_distribution_undersample.png)
+
+**Model Evaluation Metrics with Undersampled Data**
+
+Model | Accuracy | Precision | Recall | F1 Score
+--- | --- | --- | --- |--- 
+LR Model Under Sampled | 0.910423 | 0.882462 | 0.947661 | 0.913900 
+
+**Model Confusion Matrix with Undersampled Data**
+
+![](https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/resources/LR_undersample_model_confusion_mat.png)
+
