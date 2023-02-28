@@ -92,13 +92,20 @@ LR Model | 0.938971 | 0.638825 | 0.369167 | 0.467926
 
 ![](https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/resources/death_distribution_undersample.png)
 
-**Model Evaluation Metrics with Undersampled Data**
+**Model Evaluation Metrics for Undersampled Data**
 
 Model | Accuracy | Precision | Recall | F1 Score
 --- | --- | --- | --- |--- 
 LR Model Under Sampled | 0.910423 | 0.882462 | 0.947661 | 0.913900 
 
-**Model Confusion Matrix with Undersampled Data**
+**Model Confusion Matrix for Undersampled Data**
 
 ![](https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/resources/LR_undersample_model_confusion_mat.png)
+
+## Model Comparison
+
+![](https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/resources/model_comparison.png)
+
+- F1 Score increased from 47 to 91 after Under Sampling Data.
+- Also Pression and Recall is higher in Under Sampled Model.
 
