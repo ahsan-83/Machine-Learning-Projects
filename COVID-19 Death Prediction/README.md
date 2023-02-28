@@ -1,8 +1,6 @@
 # COVID-19 Death Prediction
 
-A Deep Learning Model is developed in this project to predict death risk of COVID-19 patients.
-
-## [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/notebook/COVID_19_Death_Prediction.ipynb)
+A Deep Learning Model is developed in this project to predict death risk of COVID-19 patients. [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/notebook/COVID_19_Death_Prediction.ipynb)
 
 ## [Dataset](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/COVID-19%20Death%20Prediction/datasets)
 
