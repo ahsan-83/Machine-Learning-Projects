@@ -2,7 +2,7 @@
 
 A Deep Learning Model is developed in this project to predict death risk of COVID-19 patients.
 
-## Dataset
+## [Dataset](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/COVID-19%20Death%20Prediction/datasets)
 
 [COVID-19 Dataset](https://www.kaggle.com/datasets/meirnizri/covid19-dataset) provided by the Mexican government. 
 
@@ -61,7 +61,7 @@ A Deep Learning Model is developed in this project to predict death risk of COVI
 
 - COPD, ASTHMA, INMSUPR, OTHER_DISEASE, CARDIOVASCULAR, OBESITY, RENAL_CHRONIC, TOBACCO features has lower correlations.
 
-## Logistic Regression Model
+## [Logistic Regression Model](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/COVID-19%20Death%20Prediction/notebook)
 
 - Deep Learning Logistic Regression Model used for COVID-19 Death Prediction 
 - Model contains 3 Dense layers with [128, 64, 32] units and RELU activation and 1 Dense layer unit with Sigmoid activation
