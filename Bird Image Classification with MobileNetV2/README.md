@@ -44,9 +44,15 @@ MobileNetV2 uses depthwise separable convolutions which is able to reduce the nu
 
 <img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/images/parrot_classes.png" width="600"/>
 
+## Data Preprocessing
 
+### Data Augmentation
 
+Keras **RandomFlip and RandomRotation** layers are used for data augmentation in this transfer learning model.
 
+<img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/images/data_augmentation.png" width="600"/>
+
+### Image Normalization
 
 
 
