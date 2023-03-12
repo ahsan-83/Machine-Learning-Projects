@@ -68,7 +68,7 @@ Non-max Suppression is a bounding box filtering technique to drop unnecessary ov
 
 YOLO pre-trained model **YOLO_v2** based on paper [YOLO9000: Better, Faster, Stronger (2016)](https://arxiv.org/abs/1612.08242) is used for Car object detection. YOLO_v2 Model is loaded from [Official YOLO website](https://pjreddie.com/darknet/yolo/) and Allan Zelener provided functions in [YAD2K](https://github.com/allanzelener/YAD2K) for converting YOLO_v2 model into Keras model. YOLO_v2 model was trained on [MS-COCO dataset](https://cocodataset.org/#home) with over 300K labeled images, 5 anchors per image and 80 object categories. <br/>
 
-**YOLO_v2 model data can be downloaded from [MediaFire](https://www.mediafire.com/folder/j7pjxp5vpaoi1/Autonomous_Driving_Car_Detection_with_YOLO) for project.**
+**YOLO_v2 model data can be downloaded from [MediaFire](https://www.mediafire.com/folder/j7pjxp5vpaoi1/Autonomous_Driving_Car_Detection_with_YOLO) for this project.**
 
 - In order to format the encoding of yolo_model output, yolo_head API is used provided by YAD2K in `yad2k/models/keras_yolo.py`.
 - After formatting YOLO output `bounding_box_evaluation` is used to filter the bounding boxes.
