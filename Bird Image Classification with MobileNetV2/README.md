@@ -1,7 +1,7 @@
 # Bird Image Classification with Transfer Learning : MobileNetV2
 
-The project aims to classify 8 different species of Parrot using Transfer Learning. 
-<br/>Deep CNN model MobileNetV2 pretrained on [ImageNet dataset](https://www.image-net.org/index.php) is used for Transfer Learning. 
+The project aims to classify 8 different species of Parrot using Transfer Learning.<br/>
+Deep CNN model **MobileNetV2** pretrained on [ImageNet dataset](https://www.image-net.org/index.php) is used for Transfer Learning. [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/notebook/Bird_Image_Classification_with_Transfer_Learning__MobileNetV2.ipynb)
 
 ## Dataset
 
@@ -15,6 +15,8 @@ The project aims to classify 8 different species of Parrot using Transfer Learni
 - Spixs Macaw
 - Scarlet Macaw
 - Kakapo
+
+Dataset can be downloaded from [MediaFire](https://www.mediafire.com/file/7kdc22maou64ffw/datasets.zip/file) for this project.
 
 ## MobileNetV2 for Transfer Learning
 
