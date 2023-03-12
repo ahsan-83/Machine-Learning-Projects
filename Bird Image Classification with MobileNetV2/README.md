@@ -16,7 +16,7 @@ Deep CNN model **MobileNetV2** pretrained on [ImageNet dataset](https://www.imag
 - Scarlet Macaw
 - Kakapo
 
-Dataset can be downloaded from [MediaFire](https://www.mediafire.com/file/7kdc22maou64ffw/datasets.zip/file) for this project.
+**Dataset can be downloaded from [MediaFire](https://www.mediafire.com/file/7kdc22maou64ffw/datasets.zip/file) for this project.**
 
 ## MobileNetV2 for Transfer Learning
 
