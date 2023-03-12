@@ -55,15 +55,41 @@ Non-max Suppression is a bounding box filtering technique to drop unnecessary ov
 - Repeat steps until all lower score boxes are removed
 
 
+<img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Autonomous%20Driving%20Car%20Detection%20with%20YOLO/nb_images/non-max-suppression.png" width="500"/>
 
 
+### YOLO Bounding Box Evaluation
 
+- YOLO model outputs are filtered through class score filtering and non-max suppression
+- YOLO model outputs are converted from box coordinates $(x,y,w,h)$ to box corners $(x1,y1,x2,y2)$
+- Bounding box shapes are rescaled to plot over the orginial image as YOLO network is trained on 608 x 608 image
 
+## YOLO Pre-trained Model
 
+YOLO pre-trained model **YOLO_v2** based on paper [YOLO9000: Better, Faster, Stronger (2016)](https://arxiv.org/abs/1612.08242) is used for Car object detection. YOLO_v2 Model is loaded from [Official YOLO website](https://pjreddie.com/darknet/yolo/) and Allan Zelener provided functions in [YAD2K](https://github.com/allanzelener/YAD2K) for converting YOLO_v2 model into Keras model. YOLO_v2 model was trained on [MS-COCO dataset](https://cocodataset.org/#home) with over 300K labeled images, 5 anchors per image and 80 object categories.
 
+- In order to format the encoding of yolo_model output, yolo_head API is used provided by YAD2K in `yad2k/models/keras_yolo.py`.
+- After formatting YOLO output `bounding_box_evaluation` is used to filter the bounding boxes.
+- `draw_boxes` API used to draw boxes of detected object, provided by YAD2K in `yad2k/utils/utils.py`.
+- `yolo_model_prediction` generates bounding box image from YOLO model from given input image
 
+## Car Detection
 
+### Image Car Detection
 
+- Load image from file and detect car in the image with `yolo_model_prediction`
+
+<p float="left">
+  <img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Autonomous%20Driving%20Car%20Detection%20with%20YOLO/images/road_image.jpg" width="300"/>
+  
+  <img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Autonomous%20Driving%20Car%20Detection%20with%20YOLO/images/road_image_car_detection.png" width="300"/>
+</p>
+
+### Video Car Detection
+
+- Extract frames from video file with **OpenCV** and predict car object with `yolo_video_car_detection`
+
+![](https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Autonomous%20Driving%20Car%20Detection%20with%20YOLO/video/yolo_video.gif)
 
 
 
