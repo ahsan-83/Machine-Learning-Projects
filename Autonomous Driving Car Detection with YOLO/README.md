@@ -1,5 +1,7 @@
 # Autonomous Driving Car Detection with YOLO
 
+<img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Autonomous%20Driving%20Car%20Detection%20with%20YOLO/nb_images/yolo_car_detection.PNG" width="800">
+
 The goal of this project is to implement car object detection using the YOLO (You Only Look Once) model. [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/Autonomous%20Driving%20Car%20Detection%20with%20YOLO/Autonomous_Driving_Car_Detection_with_YOLO.ipynb)<br/>
 Object detection ideas were gathered from YOLO papers: [Redmon et al., 2016](https://arxiv.org/abs/1506.02640) and [Redmon and Farhadi, 2016.](https://arxiv.org/abs/1612.08242)
 
