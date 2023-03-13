@@ -48,19 +48,50 @@ MobileNetV2 uses depthwise separable convolutions which is able to reduce the nu
 
 ### Data Augmentation
 
-Keras **RandomFlip and RandomRotation** layers are used for data augmentation in this transfer learning model.
+Keras **RandomFlip** and **RandomRotation** layers are used for data augmentation in this transfer learning model.
 
 <img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/images/data_augmentation.png" width="600"/>
 
 ### Image Normalization
 
+Images are normalized in the range [-1,1] using `preprocess_input` function of Keras MobileNetV2 model.
 
+## Transfer Learning Model Training
 
+- Load Keras MobileNetV2 model with ImageNet weights (Freez all layers) and replace top layer with Softmax classifier layer for classification
+- Add GlobalAveragePooling2D layer to summarize info in each channel
+- Add Dropout layer to avoid overfitting
+- Learning Rate : 0.001
+- Optimization Algo : Adam
+- Loss : Categorical Crossentropy
 
+### Model Evaluation
 
+Metric | Train  | Validation  | Test 
+--- | --- | --- | --- |
+Accuracy | 95% | 94% | 89%
+Loss | 0.2317 | 0.2191 | 0.3441
 
+### Fine-tuning Transfer Learning Model
 
+Transfer learning model is fine-tuned by unfreezing final 30 layers of MobileNetV2 model and retrain with low learning rate.
 
+### Fine-tuned Model Evaluation
+
+Metric | Train  | Validation  | Test 
+--- | --- | --- | --- |
+Accuracy | 98% | 96% | 93%
+Loss | 0.0518 | 0.0952 | 0.1620
+
+## Model Analysis
+
+- Loss and Accuracy both improved after fine-tuning transfer learning model
+
+<img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/images/evaluation.png" width="500"/>
+
+- Bird model accuracy increased from 89% to 93% after fine-tuning and loss decresed 35% to 15% in test dataset.
+
+<img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/images/model_comparison.png" width="550"/>
 
 
 
