@@ -1,5 +1,26 @@
 # Machine Learning Projects
 
+## [Bird Image Classification with Transfer Learning : MobileNetV2](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/Bird%20Image%20Classification%20with%20MobileNetV2)
+
+A transfer learning model is developed using Keras MobileNetV2 to classify 8 different species of Parrot. [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/notebook/Bird_Image_Classification_with_Transfer_Learning__MobileNetV2.ipynb)
+
+- Deep CNN model MobileNetV2 pretrained on ImageNet dataset is used for Transfer Learning.
+- 900 Parrot Species images are gathered from internet with dimension 160 x 160.
+- **Dataset can be downloaded from [MediaFire](https://www.mediafire.com/file/7kdc22maou64ffw/datasets.zip/file) for this project.**
+- Data augmentation and normalization are applied before model training
+- Keras MobileNetV2 model loaded with ImageNet weights (Freeze all layers) and top layer is replaced with Softmax classifier 
+- Transfer learning model is fine-tuned by unfreezing final 30 layers of MobileNetV2 model and retrain with low learning rate
+- Bird model accuracy increased from 89% to 93% after fine-tuning and loss decresed 35% to 15% in test dataset.
+
+Model Accuracy  | Train  | Validation  | Test 
+--- | --- | --- | --- 
+Bird Model            | 95%    |    94%     | 89%
+Bird Model Fine-tuned | 98%    |    96%     | 93%                          
+
+<img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/images/evaluation.png" width="500"/>
+<img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/images/model_comparison.png" width="550"/>
+
+
 ## [COVID-19 Death Prediction](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/COVID-19%20Death%20Prediction)
 
 A Deep Learning Model is developed in this project to predict death risk of COVID-19 patients. [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/COVID-19%20Death%20Prediction/notebook/COVID_19_Death_Prediction.ipynb)<br/>
