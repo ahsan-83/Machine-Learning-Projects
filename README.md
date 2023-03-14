@@ -6,7 +6,6 @@ A transfer learning model is developed using Keras MobileNetV2 to classify 8 dif
 
 - Deep CNN model MobileNetV2 pretrained on ImageNet dataset is used for Transfer Learning.
 - 900 Parrot Species images are gathered from internet with dimension 160 x 160.
-- **Dataset can be downloaded from [MediaFire](https://www.mediafire.com/file/7kdc22maou64ffw/datasets.zip/file) for this project.**
 - Data augmentation and normalization are applied before model training
 - Keras MobileNetV2 model loaded with ImageNet weights (Freeze all layers) and top layer is replaced with Softmax classifier 
 - Transfer learning model is fine-tuned by unfreezing final 30 layers of MobileNetV2 model and retrain with low learning rate
