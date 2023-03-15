@@ -1,5 +1,27 @@
 # Machine Learning Projects
 
+## [L-layer Deep Neural Network : Cat Image Classification](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/L-layer%20Deep%20Neural%20Network)
+
+L-layer Deep Neural Network Model is developed from scratch with python for Cat vs non-cat image binary classification. [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/L-layer%20Deep%20Neural%20Network/notebook/L-layer%20Deep%20Neural%20Network.ipynb)
+
+**L-layer Deep Neural Network Model Architecture**
+
+- Initialize weight and bias parameters for  L-layer deep neural network
+- Compute Linear Forward Activation *LINEAR->RELU* for $L-1$ layers and *LINEAR->SIGMOID* for last layer
+- Compute the loss with Binary Cross Entropy cost function
+- Compute gradients of loss function respect to parameters of hidden layers in Linear Backward Activation
+- Update hidden layer parameters for gradient descent using learning rate
+
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/model_architecture.png" width="500">
+
+- ["Cat vs non-Cat" dataset](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/L-layer%20Deep%20Neural%20Network/datasets) stored as `train_catvnoncat.h5` and `test_catvnoncat.h5` contains 64 x 64 dimension labelled images.
+- Binary Classification Model contains hidden layers with [12288, 20, 7, 5] units and output layer with 1 unit.
+- Learning Rate : 0.0075
+- Loss : Binary Crossentropy
+- Cat vs non-cat classification model achieved 78% accuracy and 0.83 F1 Score on test dataset
+
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/model_loss.png" width="400"/>
+
 ## [Bird Image Classification with Transfer Learning : MobileNetV2](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/Bird%20Image%20Classification%20with%20MobileNetV2)
 
 A transfer learning model is developed using Keras MobileNetV2 to classify 8 different species of Parrot. [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/Bird%20Image%20Classification%20with%20MobileNetV2/notebook/Bird_Image_Classification_with_Transfer_Learning__MobileNetV2.ipynb)
