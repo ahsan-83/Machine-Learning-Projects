@@ -117,20 +117,48 @@ $$ Recall = \frac{True Positive}{(True Positive + False Negative)}$$
 
 $$ F1 Score = \frac{2 \times Precision \times Recall}{(Precision + Recall)}$$
 
+## Cat Image Dataset
+
+"Cat vs non-Cat" dataset stored as `train_catvnoncat.h5` and `test_catvnoncat.h5` contains 64 x 64 dimension labelled images.
+
+Image shape : (64, 64, 3)
+
+- Reshape train and test image dataset before training model
+
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/cat_image_reshape.png"/>
+
+- Normalize image data to have feature values in range [0,1]
+
+## Model Training
+
+L-layer Deep Neural Network Binary Classification Model contains multiple layers for Cat Image Classification.
+
+Model contains 3 hidden layers with [20, 7, 5] units, input layer with 12288 units as flattened image size and output layer with 1 unit.
+
+- Learning Rate = 0.0075
+- Optimization Algo = Gradient Discent
+- Loss = Binary Crossentropy
+- Model Training Iteration = 3000
+
+**Model Training Accuracy and Loss**
+
+Model training accuracy 99.5 %
+
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/model_loss.png"/>
 
 
+## Model Evaluation
 
+Cat vs non-cat classification model is evaluated by computing Accuracy, Precision, Recall, F1 Score for test dataset from `L_layer_model_prediction`
 
+Metrics | Result
+--- | --- |
+Accuracy | 78.0 %
+Precision |  0.823
+Recall |  0.848
+F1 Score |  0.835
 
-
-
-
-
-
-
-
-
-
+- Cat vs non-cat classification model achieved 78% accuracy and 0.83 F1 Score
 
 
 
