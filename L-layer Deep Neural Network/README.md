@@ -2,7 +2,7 @@
 
 <img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/deep_neural_network.jpg" width="800"/>
 
-L-layer Deep Neural Network Binary Classification Model is developed from scratch with python for Cat vs non-cat image classification.
+L-layer Deep Neural Network Model is developed from scratch with python for Cat vs non-cat image binary classification. [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/L-layer%20Deep%20Neural%20Network/notebook/L-layer%20Deep%20Neural%20Network.ipynb)
 
 ## L-layer Deep Neural Network Model Architecture
 
@@ -119,7 +119,7 @@ $$ F1 Score = \frac{2 \times Precision \times Recall}{(Precision + Recall)}$$
 
 ## Cat Image Dataset
 
-"Cat vs non-Cat" dataset stored as `train_catvnoncat.h5` and `test_catvnoncat.h5` contains 64 x 64 dimension labelled images.
+["Cat vs non-Cat" dataset](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/L-layer%20Deep%20Neural%20Network/datasets) stored as `train_catvnoncat.h5` and `test_catvnoncat.h5` contains 64 x 64 dimension labelled images.
 
 Image shape : (64, 64, 3)
 
