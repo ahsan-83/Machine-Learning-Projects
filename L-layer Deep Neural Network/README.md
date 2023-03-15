@@ -12,16 +12,77 @@ L-layer Deep Neural Network Binary Classification Model is developed from scratc
 - Compute gradients of loss function respect to parameters of hidden layers in Linear Backward Activation
 - Update hidden layer parameters for gradient descent using learning rate
 
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/model_architecture.png" width="800">
 
+# L-layer Deep Neural Network Model Implementation
 
+**Initialize Parameters**
 
+Parameter initialization (Weights and Biases) for L-layer neural network implemented in `initialize_parameters_deep`
 
+- Random initialization of weights using `np.random.randn(shape)`
+- Zeros initialization of biases using `np.zeros(shape)`
 
+**Forward Propagation**
 
+- Linear Forward computes the equation $Z^{[l]} = W^{[l]}A^{[l-1]} +b^{[l]}$ in `linear_forward` where $A^{[0]} = X$. 
+- Linear Activation Forwad computes activation function of Linear Forward in *LINEAR->ACTIVATION* layer <br/><br/> $$A^{[l]} = g(Z^{[l]}) = g(W^{[l]}A^{[l-1]} +b^{[l]})$$
+- **Sigmoid**: $\sigma(Z) = \sigma(W A + b) = \frac{1}{ 1 + e^{-(W A + b)}}$. 
+- **ReLU**: $A = RELU(Z) = max(0, Z)$. 
+- L-layer Model Forward Propagation involves *LINEAR->RELU* activation in  $L-1$ layers and *LINEAR->SIGMOID* activation in last layer as implemented in `L_model_forward`
+- Forward Propagation prediction output $\hat{Y}$ is denoted as **`AL`** $A^{[L]} = \sigma(Z^{[L]}) = \sigma(W^{[L]} A^{[L-1]} + b^{[L]})$
 
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/forward_propagation.png" width="800">
 
+**Cost Function**
 
+- Forward Propagation prediction output is evaluated using binary cross entropy cost function formula as implemented in `compute_cost`
 
+$$ J = -\frac{1}{m} \sum\limits_{i = 1}^{m} (y^{(i)}\log\left(a^{[L] (i)}\right) + (1-y^{(i)})\log\left(1- a^{[L](i)}\right))$$
+
+**Backward Propagation**
+
+- Backward Propagation computes gradients of the loss function with respect to the parameters. 
+
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/backward_propagation.png" width="700">
+
+- Linear Backward computes  $dW^{[l]}, db^{[l]}, dA^{[l-1]}$ from Linear Forward equation $Z^{[l]} = W^{[l]} A^{[l-1]} + b^{[l]}$ <br/> assuming $dZ^{[l]} = \frac{\partial \mathcal{L} }{\partial Z^{[l]}}$ is already computed for layer $l$
+
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/linear_backward_propagation.png" width="400">
+
+$$ dW^{[l]} = \frac{\partial \mathcal{J} }{\partial W^{[l]}} = \frac{1}{m} dZ^{[l]} A^{[l-1] T}$$
+
+$$ db^{[l]} = \frac{\partial \mathcal{J} }{\partial b^{[l]}} = \frac{1}{m} \sum_{i = 1}^{m} dZ^{[l](i)}$$
+
+$$ dA^{[l-1]} = \frac{\partial \mathcal{L} }{\partial A^{[l-1]}} = W^{[l] T} dZ^{[l]}$$
+
+- Linear Activation Backward computes gradient $dZ^{[l]} = \frac{\partial \mathcal{L} }{\partial Z^{[l]}} = dA^{[l]} * g'(Z^{[l]})$ from Linear Activation Forward equarion $A^{[l]} = g(Z^{[l]})$
+
+- Gradient $dZ^{[l]}$ computed for different activation function is used to get $dW^{[l]}, db^{[l]}, dA^{[l-1]}$ from `linear_backward` function
+
+- **`sigmoid_backward`** and **`relu_backward`** computes $dZ^{[l]}$ for Sigmoid and RELU activation function
+
+- `L_model_backward` computes gradients of loss function respect to parameters in each hidden layer of deep neural network backward. 
+
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/backward_propagation_layers.png" width="500">
+
+At first, derivative of loss function respect to prediction **`dAL`** is computed with equation 
+
+$$ \frac{\partial \mathcal{L} }{\partial a} = -\frac{y}{a} + \frac{(1-y)}{(1-a)}$$
+
+- $dW^{[L]}, db^{[L]}, dA^{[L-1]}$ are computed from **`dAL`** for *LINEAR->SIGMOID* layer using `linear_activation_backward`
+
+- $dW^{[l]}, db^{[l]}, dA^{[l-1]}$ are computed from $dA^{[l]}$ for *LINEAR->RELU* $L-1$ layers using `linear_activation_backward`
+
+**Parameter Update**
+
+- Neural network parameters are updated from gradients as follows
+
+$$ W^{[l]} = W^{[l]} - \alpha \text{ } dW^{[l]} $$
+
+$$ b^{[l]} = b^{[l]} - \alpha \text{ } db^{[l]} $$
+
+- Learning rate $\alpha$ updates parameters $W^{[l]}$ and $b^{[l]}$ for gradient descent in every layer $l$
 
 
 
