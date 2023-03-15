@@ -4,7 +4,7 @@
 
 L-layer Deep Neural Network Binary Classification Model is developed from scratch with python for Cat vs non-cat image classification.
 
-# L-layer Deep Neural Network Model Architecture
+## L-layer Deep Neural Network Model Architecture
 
 - Initialize weight and bias parameters for  L-layer deep neural network
 - Compute Linear Forward Activation *LINEAR->RELU* for $L-1$ layers and *LINEAR->SIGMOID* for last layer
@@ -14,7 +14,7 @@ L-layer Deep Neural Network Binary Classification Model is developed from scratc
 
 <img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/model_architecture.png" width="800">
 
-# L-layer Deep Neural Network Model Implementation
+## L-layer Deep Neural Network Model Implementation
 
 **Initialize Parameters**
 
@@ -83,6 +83,64 @@ $$ W^{[l]} = W^{[l]} - \alpha \text{ } dW^{[l]} $$
 $$ b^{[l]} = b^{[l]} - \alpha \text{ } db^{[l]} $$
 
 - Learning rate $\alpha$ updates parameters $W^{[l]}$ and $b^{[l]}$ for gradient descent in every layer $l$
+
+**L-layer Deep Neural Network Model** 
+
+Neural network model is developed by stacking above steps
+
+1. Initialize Parameters
+2. Loop for number of iterations
+    * Forward Propagation
+    * Compute Cost
+    * Backward Propagation
+    * Parameter Update
+3. Predict output with trained parameters 
+
+**`L_layer_model`** trains L-layer neural network with labeled dataset (X,Y) and output hidden layer parameters
+
+**L-layer Deep Neural Network Model Prediction**
+
+After training model with train dataset we get trained parameters for hidden layer units. <br/>
+
+Model prediction evaluated for test dataset using model parameters in `L_model_forward` as implemented in `L_layer_model_prediction`
+
+- Loss is calculated from model prediciton with `compute_cost` function
+- Accuracy is calculated from model prediciton with equation
+
+$$ Accuracy = \frac{1}{m} \sum\limits_{i = 1}^{m} (\hat Y^{(i)} == Y^{(i)})$$
+
+- Precision, Recall and F1 Score is calculated from model prediciton with equations
+
+$$ Precision = \frac{True Positive}{(True Positive + False Positive)}$$
+
+$$ Recall = \frac{True Positive}{(True Positive + False Negative)}$$
+
+$$ F1 Score = \frac{2 \times Precision \times Recall}{(Precision + Recall)}$$
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
