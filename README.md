@@ -64,7 +64,7 @@ Deep CNN model **YOLO (You Only Look Once)** is used to detect Car object in ima
 YOLO pre-trained model **YOLO_v2** based on paper [YOLO9000: Better, Faster, Stronger (2016)](https://arxiv.org/abs/1612.08242) is used for Car object detection. YOLO_v2 Model is loaded from [Official YOLO website](https://pjreddie.com/darknet/yolo/) and Allan Zelener provided functions in [YAD2K](https://github.com/allanzelener/YAD2K) for converting YOLO_v2 model into Keras model. YOLO_v2 model was trained on [MS-COCO dataset](https://cocodataset.org/#home) with over 300K labeled images, 5 anchors per image and 80 object categories.
 
 
-### Image Car Detection
+**Image Car Detection**
 
 - Load image from file and detect car in the image with `yolo_model_prediction`
 
@@ -74,7 +74,7 @@ YOLO pre-trained model **YOLO_v2** based on paper [YOLO9000: Better, Faster, Str
   <img src="https://github.com/ahsan-83/Machine-Learning-Projects/blob/main/Autonomous%20Driving%20Car%20Detection%20with%20YOLO/images/road_image_car_detection.png" width="300"/>
 </p>
 
-### Video Car Detection
+**Video Car Detection**
 
 - Extract frames from video file with **OpenCV** and predict car object with `yolo_video_car_detection`
 
