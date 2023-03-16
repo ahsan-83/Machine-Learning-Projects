@@ -1,4 +1,4 @@
-# Machine Learning Projects
+# **Machine Learning Projects**
 
 ## [L-layer Deep Neural Network : Cat Image Classification](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/L-layer%20Deep%20Neural%20Network)
 
@@ -21,6 +21,40 @@ L-layer Deep Neural Network Model is developed from scratch with python for Cat 
 - Cat vs non-cat classification model achieved 78% accuracy and 0.83 F1 Score on test dataset
 
 <img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/L-layer%20Deep%20Neural%20Network/images/model_loss.png" width="400"/>
+
+## [Image Compression : K-means Clustering](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/Image%20Compression)
+
+K-means clustering algorithm is implemented to compress image in this project. [Notebook](https://nbviewer.org/github/ahsan-83/Machine-Learning-Projects/blob/main/Image%20Compression/notebook/Image_Compression.ipynb)
+
+In a 24-bit color representation of an image, each pixel is represented as three 8-bit unsigned integers (ranging from 0 to 255) specifically Red, Green and Blue intensity values which is known as RGB encoding. Every image contains thousands of colors and we can compress an Image by reducing the numbers of colors to 16 colors. Thus we will only store the RGB values of the 16 colors, and for each pixel we only need to store the index (4 bit to represent 16 color ) of assigned color.
+
+K-means clustering algorithm is used to partition image pixel color values in to 16 color values which is used to compress image. 
+
+```python
+% Initialize centroids
+centroids = kMeansInitCentroids(X, K) 
+
+for iter = 1:iterations
+    % Assign each data point to the closest centroid 
+    idx = findClosestCentroids(X, centroids)
+    
+    % Compute means based on centroid assignments
+    centroids = computeMeans(X, idx, K);
+end
+```
+
+- Image data is normalized into range [0,1] after loading
+- Image data is reshaped from (width, height, 3) to (width * height, 3)
+- K-means clustering is run 20 times using `kMeanClustering` with parameter K = 16 and clustering iteration = 10.
+- Optimum Clustering Error : 8.65%
+
+- **Clustering Error**
+
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/Image%20Compression/images/compression_error.png" width="400"/>
+
+- **Compressed Image**
+
+<img src="https://raw.githubusercontent.com/ahsan-83/Machine-Learning-Projects/main/Image%20Compression/images/compressed_image.png" width="400"/>
 
 ## [Bird Image Classification with Transfer Learning : MobileNetV2](https://github.com/ahsan-83/Machine-Learning-Projects/tree/main/Bird%20Image%20Classification%20with%20MobileNetV2)
 
